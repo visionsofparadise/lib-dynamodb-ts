@@ -1,8 +1,6 @@
 name: NPM publish workflow
 
-on:
-    release:
-        types: [published]
+on: [push]
 
 jobs:
     build:
@@ -19,12 +17,6 @@ jobs:
             - run: npm ci
             - run: npm run check
             - run: npm run test
-            - run: git config --global user.name "visionsofparadise"
-            - run: git config --global user.email "matt@mattcavender.com"
-            - run: npm version patch
             - run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-            - run: git push
-              env:
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
