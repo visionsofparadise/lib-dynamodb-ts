@@ -1,6 +1,6 @@
 {
   "name": "lib-dynamodb-ts",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "DynamoDB Document Client commands that accept type parameters.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
