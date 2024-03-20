@@ -17,7 +17,6 @@
       "moduleResolution": "node",
       "sourceMap": false,
       "esModuleInterop": true,
-      "removeComments": true,
       "allowUmdGlobalAccess": true,
       "noImplicitAny": true,
       "strictNullChecks": true,

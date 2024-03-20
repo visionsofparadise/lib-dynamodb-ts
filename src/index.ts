@@ -1,43 +1,42 @@
-export { BatchExecuteStatementCommand } from "./commands/BatchExecuteStatementCommand";
-export type { BatchExecuteStatementCommandInput, BatchExecuteStatementCommandOutput } from "./commands/BatchExecuteStatementCommand";
+export { batchExecuteStatements } from "./batchExecuteStatements";
+export type { BatchExecuteStatementsInput, BatchExecuteStatementsOutput } from "./batchExecuteStatements";
 
-export { BatchGetCommand } from "./commands/BatchGetCommand";
-export type { BatchGetCommandInput, BatchGetCommandOutput } from "./commands/BatchGetCommand";
+export { batchGetItems } from "./batchGetItems";
+export type { BatchGetItemsInput, BatchGetItemsOutput } from "./batchGetItems";
 
-export { BatchWriteCommand } from "./commands/BatchWriteCommand";
-export type { BatchWriteCommandInput, BatchWriteCommandOutput } from "./commands/BatchWriteCommand";
+export { batchWriteItems } from "./batchWriteItems";
+export type { BatchWriteItemsInput, BatchWriteItemsOutput } from "./batchWriteItems";
 
-export { DeleteCommand } from "./commands/DeleteCommand";
-export type { DeleteCommandInput, DeleteCommandOutput, DeleteReturnValue } from "./commands/DeleteCommand";
+export { deleteItem } from "./deleteItem";
+export type { DeleteItemInput, DeleteItemOutput, DeleteReturnValues } from "./deleteItem";
 
-export { ExecuteStatementCommand } from "./commands/ExecuteStatementCommand";
-export type { ExecuteStatementCommandInput, ExecuteStatementCommandOutput } from "./commands/ExecuteStatementCommand";
+export { executeItemsStatement } from "./executeItemsStatement";
+export type { ExecuteItemsStatementInput, ExecuteItemsStatementOutput } from "./executeItemsStatement";
 
-export { ExecuteTransactionCommand } from "./commands/ExecuteTransactionCommand";
-export type { ExecuteTransactionCommandInput, ExecuteTransactionCommandOutput } from "./commands/ExecuteTransactionCommand";
+export { executeItemsTransaction } from "./executeItemsTransaction";
+export type { ExecuteItemsTransactionInput, ExecuteItemsTransactionOutput } from "./executeItemsTransaction";
 
-export { GetCommand } from "./commands/GetCommand";
-export type { GetCommandInput, GetCommandOutput } from "./commands/GetCommand";
+export { getItem } from "./getItem";
+export type { GetItemInput, GetItemOutput } from "./getItem";
 
-export { PutCommand } from "./commands/PutCommand";
-export type { PutCommandInput, PutCommandOutput, PutReturnValue } from "./commands/PutCommand";
+export { putItem } from "./putItem";
+export type { PutItemInput, PutItemOutput, PutReturnValues } from "./putItem";
 
-export { QueryCommand } from "./commands/QueryCommand";
-export type { QueryCommandInput, QueryCommandOutput } from "./commands/QueryCommand";
+export { queryItems } from "./queryItems";
+export type { QueryItemsInput, QueryItemsOutput } from "./queryItems";
 
-export { ScanCommand } from "./commands/ScanCommand";
-export type { ScanCommandInput, ScanCommandOutput } from "./commands/ScanCommand";
+export { scanItems } from "./scanItems";
+export type { ScanItemsInput, ScanItemsOutput } from "./scanItems";
 
-export { TransactGetCommand } from "./commands/TransactGetCommand";
-export type { TransactGetCommandInput, TransactGetCommandOutput } from "./commands/TransactGetCommand";
+export { transactGetItems } from "./transactGetItems";
+export type { TransactGetItemsInput, TransactGetItemsOutput } from "./transactGetItems";
 
-export { TransactWriteCommand } from "./commands/TransactWriteCommand";
-export type { TransactWriteCommandInput, TransactWriteCommandOutput } from "./commands/TransactWriteCommand";
+export { transactWriteItems } from "./transactWriteItems";
+export type { TransactWriteItemsInput, TransactWriteItemsOutput } from "./transactWriteItems";
 
-export { UpdateCommand } from "./commands/UpdateCommand";
-export type { UpdateCommandInput, UpdateCommandOutput, UpdateReturnValue } from "./commands/UpdateCommand";
+export { updateItem } from "./updateItem";
+export type { UpdateItemInput, UpdateItemOutput, UpdateReturnValues } from "./updateItem";
 
-export { paginateQuery } from "./pagination/QueryPaginator";
-export { paginateScan } from "./pagination/ScanPaginator";
+export { paginate } from "./paginate";
 
-export type { GenericAttributes } from "./utils";
+export type { GenericAttributes, ReturnValues } from "./utils";

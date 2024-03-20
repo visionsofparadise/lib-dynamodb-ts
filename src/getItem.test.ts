@@ -1,7 +1,7 @@
 import { PutCommand } from "@aws-sdk/lib-dynamodb";
 import { A } from "ts-toolbelt";
-import { DocumentClient, TestPrimaryKey, TestTableName, randomString } from "../utils";
-import { GetCommand } from "./GetCommand";
+import { getItem } from "./getItem";
+import { DocumentClient, TABLE_CONFIGURATION, TestPrimaryKey, TestTableName, randomString } from "./utils.dev";
 
 it("gets an item", async () => {
 	const string = randomString();
@@ -18,12 +18,9 @@ it("gets an item", async () => {
 		})
 	);
 
-	const result = await DocumentClient.send(
-		new GetCommand<TestPrimaryKey>({
-			TableName: TestTableName,
-			Key: item,
-		})
-	);
+	const result = await getItem<TestPrimaryKey, TestPrimaryKey>(TABLE_CONFIGURATION, {
+		Key: item,
+	});
 
 	const resultTypeCheck: A.Equals<(typeof result)["Item"], TestPrimaryKey> = 1;
 

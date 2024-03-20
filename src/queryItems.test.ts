@@ -1,7 +1,7 @@
 import { BatchWriteCommand } from "@aws-sdk/lib-dynamodb";
 import { A } from "ts-toolbelt";
-import { DocumentClient, TestPrimaryKey, TestTableName, arrayOfLength, randomString } from "../utils";
-import { ScanCommand } from "./ScanCommand";
+import { queryItems } from "./queryItems";
+import { DocumentClient, TABLE_CONFIGURATION, TestPrimaryKey, TestTableName, arrayOfLength, randomString } from "./utils.dev";
 
 it("query returns list of items", async () => {
 	const hash = randomString();
@@ -27,15 +27,16 @@ it("query returns list of items", async () => {
 		})
 	);
 
-	const result = await DocumentClient.send(
-		new ScanCommand<TestPrimaryKey>({
-			TableName: TestTableName,
-		})
-	);
+	const result = await queryItems<TestPrimaryKey, TestPrimaryKey>(TABLE_CONFIGURATION, {
+		KeyConditionExpression: "pk = :pk",
+		ExpressionAttributeValues: {
+			":pk": hash,
+		},
+	});
 
-	const itemsTypeCheck: A.Equals<(typeof result)["Items"], Array<TestPrimaryKey>> = 1;
+	const itemsTypeCheck: A.Equals<(typeof result)["Items"], Array<TestPrimaryKey> | undefined> = 1;
 
 	expect(itemsTypeCheck).toBe(1);
 
-	expect(result.Items?.length).toBeGreaterThan(10);
+	expect(result.Items?.length).toBe(10);
 });

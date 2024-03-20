@@ -8,3 +8,4 @@ tsconfig.json
 tslint.json
 .vscode
 .github
+*.dev.ts

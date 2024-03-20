@@ -1,6 +1,6 @@
 {
   "name": "lib-dynamodb-ts",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "DynamoDB Document Client commands that accept type parameters.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -8,7 +8,6 @@
   "files": [
     "dist/**"
   ],
-  "sideEffects": false,
   "scripts": {
     "check": "tsc --noEmit",
     "test": "jest",
@@ -17,7 +16,9 @@
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.509.0",
-    "@aws-sdk/lib-dynamodb": "^3.509.0"
+    "@aws-sdk/lib-dynamodb": "^3.509.0",
+    "@aws-sdk/util-dynamodb": "^3.509.0",
+    "@smithy/types": "^2.9.1"
   },
   "devDependencies": {
     "@shelf/jest-dynamodb": "^3.4.1",
